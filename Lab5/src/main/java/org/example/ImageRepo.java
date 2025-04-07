@@ -1,5 +1,8 @@
 package org.example;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -18,9 +21,35 @@ public class ImageRepo {
         images.add(image);
     }
 
+    public boolean removeImage(String name) {
+        return images.removeIf(img -> img.name().equalsIgnoreCase(name));
+    }
+
+    public boolean updateImage(String name, ImageItem updatedImage) {
+        for (int i = 0; i < images.size(); i++) {
+            if (images.get(i).name().equalsIgnoreCase(name)) {
+                images.set(i, updatedImage);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     public List<ImageItem> getImages() {
         return images;
+    }
+
+    public void save(String filename) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(new File(filename), images);
+    }
+
+    public void load(String filename) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        CollectionType listType = mapper.getTypeFactory().constructCollectionType(ArrayList.class, ImageItem.class);
+        images = mapper.readValue(new File(filename), listType);
     }
 
 
