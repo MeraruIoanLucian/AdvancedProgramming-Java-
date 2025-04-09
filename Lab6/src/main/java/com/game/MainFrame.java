@@ -3,9 +3,7 @@ package com.game;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * The main frame of the application.
- */
+
 public class MainFrame extends JFrame {
     public MainFrame() {
         super("Game GUI");

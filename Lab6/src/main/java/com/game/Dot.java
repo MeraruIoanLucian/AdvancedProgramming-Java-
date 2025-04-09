@@ -3,9 +3,6 @@ package com.game;
 import java.awt.*;
 import java.io.Serializable;
 
-/**
- * Represents a dot on the game board.
- */
 public class Dot implements Serializable {
     private static final long serialVersionUID = 1L;
     private int x;

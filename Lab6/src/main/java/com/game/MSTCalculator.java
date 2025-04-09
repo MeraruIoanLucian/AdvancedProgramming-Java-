@@ -2,10 +2,7 @@ package com.game;
 
 import java.util.List;
 
-/**
- * Implements a simple version of Prim's algorithm to compute the minimum spanning tree weight.
- * The MST weight is used here as the optimal score.
- */
+
 public class MSTCalculator {
     public static double computeMSTWeight(List<Dot> dots) {
         if (dots.isEmpty()) return 0;

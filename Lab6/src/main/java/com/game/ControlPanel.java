@@ -1,14 +1,10 @@
 package com.game;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.awt.image.BufferedImage;
 
-/**
- * Control panel for game actions.
- */
 public class ControlPanel extends JPanel {
     private GameModel model;
     private DrawingPanel drawingPanel;

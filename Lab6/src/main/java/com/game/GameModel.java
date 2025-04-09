@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Represents the current state of the game.
- */
 public class GameModel implements Serializable {
     private static final long serialVersionUID = 1L;
     private List<Dot> dots;
